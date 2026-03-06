@@ -3,12 +3,8 @@ import serial
 import threading
 
 app = Flask(__name__)
-
 latest_packet = ""
-
-
 ser = serial.Serial('COM5',115200)   
-
 
 def read_arduino():
     global latest_packet
@@ -21,11 +17,9 @@ def read_arduino():
         except:
             pass
 
-
 @app.route("/packet")
 def get_packet():
     return jsonify({"packet": latest_packet})
-
 
 if __name__ == "__main__":
 
