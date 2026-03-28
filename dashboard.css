@@ -1,0 +1,47 @@
+.title {
+    color: rgb(55, 134, 230);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin:0;
+    font-size: 25px;
+}
+body {
+    margin: 0;
+
+    background:
+        linear-gradient(rgba(0, 120, 255, 0.12), rgba(0, 120, 255, 0.12)),
+        #000000;
+
+    background-attachment: fixed;
+    min-height: 100vh;
+
+    color: white;
+    font-family: Arial, sans-serif;
+}
+.telemetry-container{
+    width:1500px;
+    height:100px;
+    background:black;
+    border:2px solid #023e6b;
+    border-radius:10px;
+    font-family:monospace;
+    display:flex;
+    flex-direction:column;
+}
+
+.terminal-header{
+    padding:10px;
+    background:#001f1a;
+    color:#2975e8;
+    font-weight:bold;
+    border-bottom:1px solid #1e69e1;
+}
+
+#terminalOutput{
+    flex:1;
+    padding:10px;
+    color:#4b8cdb;
+    overflow-y:auto;
+    margin:0;
+}
