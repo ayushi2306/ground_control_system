@@ -1,0 +1,219 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1220;
+  color: #e8f0ff;
+}
+
+.topbar {
+  padding: 18px 22px;
+  background: rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.subtitle {
+  margin-top: 4px;
+  opacity: 0.85;
+  font-size: 13px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 14px;
+  padding: 14px;
+}
+
+@media (max-width: 1000px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mapPane {
+  position: relative;
+}
+
+#map {
+  height: 76vh;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hint {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.card h2 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 8px;
+}
+
+.modeBtn {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8f0ff;
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.modeBtn.active {
+  background: rgba(35, 120, 255, 0.25);
+  border-color: rgba(35, 120, 255, 0.65);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+label {
+  font-size: 12.5px;
+  opacity: 0.95;
+}
+
+input {
+  width: 100%;
+  margin-top: 4px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.25);
+  color: #e8f0ff;
+}
+
+.sep {
+  margin: 14px 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.primaryBtn {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid rgba(35, 120, 255, 0.65);
+  background: rgba(35, 120, 255, 0.28);
+  color: #e8f0ff;
+  padding: 11px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.secondaryBtn {
+  width: 100%;
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8f0ff;
+  padding: 11px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.pathsList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pathBtn {
+  border-radius: 12px;
+  padding: 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+  color: #e8f0ff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.pathBtn.selected {
+  border-color: rgba(35, 120, 255, 0.75);
+  background: rgba(35, 120, 255, 0.20);
+}
+
+.pathMeta {
+  font-size: 12px;
+  opacity: 0.88;
+  margin-top: 4px;
+}
+
+.waypointItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.smallBtn {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.06);
+  color: #e8f0ff;
+  padding: 7px 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.waypointNumberIcon {
+  background: transparent;
+  border: 0;
+}
+
+.waypointNumber {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0, 229, 255, 0.35);
+  border: 2px solid rgba(0, 229, 255, 0.95);
+  color: #e8f0ff;
+  font-weight: 800;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details {
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.25;
+}
+
