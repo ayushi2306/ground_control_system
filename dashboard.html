@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telemetry Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="dashboard.js" defer></script>
+
+</head>
+
+<body>
+
+<h1 class="title">Telemetry Dashboard</h1>
+<hr style="margin-top:50px">
+
+<!-- Terminal -->
+<div class="telemetry-container">
+
+<div class="terminal-header">
+TELEMETRY TERMINAL
+</div>
+
+<pre id="terminalOutput">Waiting for telemetry...</pre>
+
+</div>
+
+
+<!-- Charts -->
+<div style="width:700px; margin-top:40px;">
+    <canvas id="altitudeChart"></canvas>
+</div>
+
+<div style="width:700px; margin-top:40px;">
+    <canvas id="temperatureChart"></canvas>
+</div>
+
+<div style="width:700px; margin-top:40px;">
+    <canvas id="batteryChart"></canvas>
+</div>
+
+</body>
+</html>
