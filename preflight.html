@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pre-Flight Planner</title>
+  <link rel="stylesheet" href="preflight.css">
+
+  <!-- Leaflet (clickable map) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <script src="preflight.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="title">Pre-Flight Planner</div>
+    <div class="subtitle">Click map to set points, then build a path</div>
+  </header>
+
+  <main class="layout">
+    <section class="mapPane">
+      <div id="map"></div>
+      <div class="hint" id="clickHint">Mode: <b id="modeLabel">Set Launch</b></div>
+    </section>
+
+    <aside class="panel">
+      <div class="card">
+        <h2>1) Setup</h2>
+
+        <div class="row">
+          <button type="button" id="setLaunchBtn" class="modeBtn active">Set Launch</button>
+          <button type="button" id="setTargetBtn" class="modeBtn">Set Target</button>
+          <button type="button" id="setWaypointsBtn" class="modeBtn">Add Waypoints</button>
+        </div>
+
+        <div class="fields">
+          <label>Launch Latitude
+            <input id="launchLat" type="number" step="0.000001" placeholder="e.g. 28.6139">
+          </label>
+          <label>Launch Longitude
+            <input id="launchLon" type="number" step="0.000001" placeholder="e.g. 77.2090">
+          </label>
+
+          <label>Target Latitude
+            <input id="targetLat" type="number" step="0.000001" placeholder="e.g. 28.6200">
+          </label>
+          <label>Target Longitude
+            <input id="targetLon" type="number" step="0.000001" placeholder="e.g. 77.2200">
+          </label>
+        </div>
+
+        <hr class="sep">
+
+        <h2>2) Path Generation (simple wind-drift model)</h2>
+
+        <div class="fields">
+          <label>Wind Speed Min (m/s)
+            <input id="windSpeedMin" type="number" step="0.1" value="0">
+          </label>
+          <label>Wind Speed Max (m/s)
+            <input id="windSpeedMax" type="number" step="0.1" value="15">
+          </label>
+
+          <label>Wind Heading Min (deg from North)
+            <input id="windHeadingMin" type="number" step="1" value="0">
+          </label>
+          <label>Wind Heading Max (deg from North)
+            <input id="windHeadingMax" type="number" step="1" value="360">
+          </label>
+
+          <label>Horizontal Speed (m/s) (for time estimate)
+            <input id="horizontalSpeed" type="number" step="1" value="30">
+          </label>
+
+          <label>Number of Paths
+            <input id="numPaths" type="number" step="1" min="1" max="20" value="5">
+          </label>
+        </div>
+
+        <button type="button" id="generateBtn" class="primaryBtn">Generate Paths</button>
+        <button type="button" id="clearBtn" class="secondaryBtn">Clear</button>
+      </div>
+
+      <div class="card">
+        <h2>3) Choose a Path</h2>
+        <div id="pathsListWrap">
+          <div id="pathsList" class="pathsList"></div>
+        </div>
+        <div id="waypointsListWrap" style="display:none; margin-top: 10px;">
+          <div class="pathMeta" style="margin-bottom: 8px;">Waypoints (click order)</div>
+          <div id="waypointsList" class="pathsList"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>4) Selected Path Details</h2>
+        <pre id="details" class="details">Select a path to see details.</pre>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
+
